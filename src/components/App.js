@@ -29,9 +29,11 @@ console.log(movieDetails)
     <div>
         {/* Do not remove the main div */}
         <div>Search Movie</div>
+          <form>
           <input type="text" value={search} 
           onChange={(e)=>setSearch(e.target.value)} 
           placeholder="Search Movie"/>
+          </form>
 
           <button onClick={getMovie}>Search</button>
           <ul>
@@ -41,7 +43,7 @@ console.log(movieDetails)
                 <h2>{movie.Title} {`(${movie.Year})`}</h2>
                 <img src={movie.Poster} />
               </li>
-              ) : <p>Invalid movie name. Please try again.</p>
+              ) : <p className="error">Invalid movie name. Please try again.</p>
             }
           </ul>
     </div>
